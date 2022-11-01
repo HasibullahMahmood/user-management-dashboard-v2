@@ -65,7 +65,7 @@ const slice = createSlice({
 		[loadUsers.pending]: setPending,
 		[loadUsers.fulfilled]: (state, action) => {
 			state.loading = false
-			state.list = action.payload
+			state.list = Array.isArray(action.payload) ? action.payload : []
 		},
 		[loadUsers.rejected]: setRejected,
 		// ADD USER
