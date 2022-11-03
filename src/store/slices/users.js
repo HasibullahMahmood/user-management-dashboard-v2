@@ -41,6 +41,7 @@ export const updateUser = createAsyncThunk('users/updateUser', async (user) => {
 
 const initialState = {
 	list: [],
+	loaded: false,
 	loading: false,
 	error: null,
 	deleteLoading: false,
@@ -66,6 +67,7 @@ const slice = createSlice({
 		[loadUsers.fulfilled]: (state, action) => {
 			state.loading = false
 			state.list = Array.isArray(action.payload) ? action.payload : []
+			state.loaded = true
 		},
 		[loadUsers.rejected]: setRejected,
 		// ADD USER

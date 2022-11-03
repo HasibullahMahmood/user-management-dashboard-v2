@@ -12,12 +12,12 @@ import useSuccessAlert from '../hooks/useSuccessAlert'
 const Users = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
-	const { loading, error, list: users } = useSelector((state) => state.users)
+	const { loading, error, list: users, loaded } = useSelector((state) => state.users)
 	const [warnDelete, setWarnDelete] = useState({ open: false, userId: null })
 	const { setOpen: setSuccessAlertOpen, SuccessAlert } = useSuccessAlert()
 
 	useEffect(() => {
-		if (users.length === 0) {
+		if (!loaded) {
 			dispatch(loadUsers())
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
