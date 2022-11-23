@@ -1,5 +1,6 @@
 ﻿# user-management-dashboard-v2
  
+ A simple user dashboard with CRUD operations
  
  ### Home Page
 ![home](https://user-images.githubusercontent.com/48029545/203383684-e92fc51e-bc2a-47c0-a493-edc45fac9391.png)
